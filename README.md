@@ -36,6 +36,7 @@
                 {
                     // count2 = Convert.ToInt32(b.Text);
                 }
-            }	
+            }		    
 			
 	---维护主体
+![avatar](http://baidu.com/pic/doge.png)
