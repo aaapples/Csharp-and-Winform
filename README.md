@@ -41,7 +41,61 @@
 				}
 				
 	---维护主体
+#
+【2】---【2019.4.28】---【aaapples】--->【一个好的开始，凌晨一点毕】
+-	
+	---主要知识
+	
+	1.颜色RGB数值运算
+	2.button按钮事件回退
+	3.颜色与字符的转换
+	4.色板选中
+						
+	
+	---维护主体
+	
+	刻度尺(滑块的一种)：trackBar
+	颜色关键字:Color
+	水平滑块：hScrollBar
+	▢类似groupbox容器：panel
+	文本框：richtextbox	
+	
+	Color关键字声明颜色变量：
+		private Color cl;
+		
+	显示刻度尺的度：
+		label9.Text = trackBar1.Value.ToString()；
+		
+	显示水平滑块的度：
+		label9.Text = hScrollBar1.Value.ToString()；
 
+	颜色设置：
+		panel1.BackColor = Color.FromArgb(hScrollBar1.Value, hScrollBar2.Value, hScrollBar3.Value);
+			方法：Color.FromArgb(int,int,int);
+			(int,int,int):对应颜色的RGB数值，(R,G,B)，最大不超过255
+			
+		button3.ForeColor = Color.FromArgb(Color.White.R-panel1.BackColor.R, Color.White.G - panel1.BackColor.G, Color.White.B - panel1.BackColor.B);
+			提示：R,G，B数值做运算，可得颜色差。
+				  每种颜色的RGB数值固定，白色的数值最大，与白色做差运算，颜色取反
+				
+		string scr = "#" + richTextBox2.ForeColor.R.ToString() + richTextBox2.ForeColor.G.ToString() + richTextBox2.ForeColor.B.ToString();
+		private Color cl = System.Drawing.ColorTranslator.FromHtml(scr);	
+			把颜色值十六进制转为字符串："#"+"R"+"G"+"B"
+			进一步把字符串转为颜色值：System.Drawing.ColorTranslator.FromHtml(scr);
+			
+		色板控件：colorDialog
+			选中颜色判断：
+				if(colorDialog1.ShowDialog()==DialogResult.OK)
+            {
+                button3.BackColor = colorDialog1.Color;
+				//ShowDialog()：弹出色板窗口
+            }
+			
+		取消上一次button按钮操作：	
+			button1.DialogResult = DialogResult.Cancel;
+
+	
+	---维护主体
 
 
 
