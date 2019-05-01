@@ -76,7 +76,7 @@
 			
 		button3.ForeColor = Color.FromArgb(Color.White.R-panel1.BackColor.R, Color.White.G - panel1.BackColor.G, Color.White.B - panel1.BackColor.B);
 			提示：R,G，B数值做运算，可得颜色差。
-				  每种颜色的RGB数值固定，白色的数值最大，与白色做差运算，颜色取反
+			  每种颜色的RGB数值固定，白色的数值最大，与白色做差运算，颜色取反
 				
 		string scr = "#" + richTextBox2.ForeColor.R.ToString() + richTextBox2.ForeColor.G.ToString() + richTextBox2.ForeColor.B.ToString();
 		private Color cl = System.Drawing.ColorTranslator.FromHtml(scr);	
